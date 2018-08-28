@@ -119,7 +119,7 @@ public class PrimeiroFrame extends JFrame {
         botaoEsquerdo = new JButton("Esquerda");    //CRIA O BOTÃO LEFT
         add(botaoEsquerdo);     //ADICIONA O BOTÃO ESQUERDO AO FRAME
 
-        Icon iconeEsquerda = new ImageIcon(getClass().getResource("esquerda.png"));
+        Icon iconeEsquerda = new ImageIcon(getClass().getResource("esquerda.jpg"));
         botaoEsquerdo.setIcon(iconeEsquerda);
 
         botaoEsquerdo.addActionListener(new ActionListener() {
@@ -154,7 +154,7 @@ public class PrimeiroFrame extends JFrame {
 
         botaoDireito = new JButton("Direita");
         add(botaoDireito);  //ADICIONA BOTÃO
-        Icon iconeDireita = new ImageIcon(getClass().getResource("direita.png"));
+        Icon iconeDireita = new ImageIcon(getClass().getResource("direita.gif"));
         botaoDireito.setIcon(iconeDireita);
 
 
