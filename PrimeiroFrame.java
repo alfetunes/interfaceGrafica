@@ -19,12 +19,12 @@ public class PrimeiroFrame extends JFrame {
     private JButton botaoEntra;   //BOTÃO PARA CONFIGURAR O ALINHAMENTO À DIREITA
     private JButton botaoEsquerdo;  //BOTÃO PARA CONFIGURAR O ALINHAMENTO À ESQUERDA
     private JButton botaoCentral;   //BOTÃO PARA CONFIGURAR O ALINHAMENTO CENTRALIZADO
-
+    private static int contador = 0;
     public PrimeiroFrame(){
         super("teste");
         layout = new FlowLayout();      //CRIA FLOWLAYOUT
         container = getContentPane();   //OBTÊM CONTEINER PARA LAYOUT
-         
+        
         setLayout(layout);  //CONFIGURA O LAYOUT DE FRAME
         layout.setAlignment(BoxLayout.LINE_AXIS);
         layout.layoutContainer(container);  
@@ -174,6 +174,17 @@ public class PrimeiroFrame extends JFrame {
     public static void main(String[] args) {
 		PrimeiroFrame janela = new PrimeiroFrame();
 		
+        janela.getContentPane().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent event) {
+                //adiciona dinamicamente no clique
+                JLabel textField = new JLabel("Clicou "+ ++contador); 
+                janela.add(textField);
+                textField.setBounds(event.getX(), event.getY(), 200, 30);
+                janela.getContentPane().add(textField);
+            }
+        });
+
 		janela.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
 		janela.setSize(500,800);
         janela.setVisible(true);
