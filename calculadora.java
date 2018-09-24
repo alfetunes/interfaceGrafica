@@ -13,6 +13,14 @@ import java.util.List;
 
 public class calculadora extends JFrame {
     private JTextField resultado;
+    private JButton clear;
+    private JButton exponencial;
+    private JButton raizQuadrada;
+    private JButton raizCubica;
+    private JButton porcentagem;
+    private JButton quadrado;
+    private JButton cubo;
+    private JButton xy;
     private JButton botao0;
     private JButton botao1;
     private JButton botao2;
@@ -38,7 +46,6 @@ public class calculadora extends JFrame {
     private List<Double> numero = new ArrayList<Double>();
 
 
-
     public calculadora(){
         super("Calc");
         layout = new FlowLayout();      //CRIA FLOWLAYOUT
@@ -50,7 +57,25 @@ public class calculadora extends JFrame {
         add(resultado);
         
         buttonjpannel = new JPanel();
-        buttonjpannel.setLayout(new GridLayout(4,4));
+        buttonjpannel.setLayout(new GridLayout(6,4));
+
+
+        exponencial = new JButton("ex");
+        buttonjpannel.add(exponencial);
+        raizQuadrada = new JButton("r2");
+        buttonjpannel.add(raizQuadrada);
+        raizCubica = new JButton("r3");
+        buttonjpannel.add(raizCubica);
+        porcentagem = new JButton("%");
+        buttonjpannel.add(porcentagem);
+        quadrado = new JButton("x2");
+        buttonjpannel.add(quadrado);
+        cubo = new JButton("x3");
+        buttonjpannel.add(cubo);
+        xy = new JButton("xy");
+        buttonjpannel.add(xy);
+        clear =  new JButton("CLR");
+        buttonjpannel.add(clear);
 
         botao7 = new JButton("7");    
         buttonjpannel.add(botao7);
@@ -258,6 +283,13 @@ public class calculadora extends JFrame {
             }
         });
 
+        clear.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent event) {
+                resultado.setText(" ");
+                contadorCaracteres=0;    
+            }
+        });
 
 
     }
@@ -265,7 +297,7 @@ public class calculadora extends JFrame {
     public static void main(String[] args) {
 		calculadora janela = new calculadora();
 		janela.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
-		janela.setSize(200,200);
+		janela.setSize(300,300);
         janela.setVisible(true);
 	}
 
